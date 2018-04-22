@@ -15,7 +15,7 @@ FUNCTION["REFRESH_CONFIG"] = function()
 
     local center_mysql = skynet.getenv("center_mysql")
     local host, port = string.match(center_mysql, "([%d%.]+):([%d]+)")
-    local mysql_conf = {host=host,port=port,database = "lsj_game",user="mengyagame",password="lsj_2018",max_packet_size = 1024 * 1024}
+    local mysql_conf = {host=host,port=port,database = "lsj_game",user="mygame",password="lsj_2018",max_packet_size = 1024 * 1024}
     sharedata.update("mysql_conf",mysql_conf)
 
 end

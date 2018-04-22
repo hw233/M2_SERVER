@@ -1,8 +1,11 @@
 CREATE USER 'mygame'@'localhost' identified by 'lsj_2018';
 CREATE USER 'mygame'@'%' identified by 'lsj_2018';
-
-
+flush privileges; 
 CREATE DATABASE IF NOT EXISTS lsj_game default char set utf8;
+grant all privileges on `lsj_game`.* to 'mygame'@'%' identified by 'lsj_2018'; 
+grant all privileges on `lsj_game`.* to 'mygame'@'localhost' identified by 'lsj_2018';
+flush privileges;
+
 use lsj_game;
 
 -- 用户的注册信息表
