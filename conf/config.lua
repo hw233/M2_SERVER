@@ -19,7 +19,7 @@ protobuf = root.."proto/protocol.pb"
 
 -- 获取系统的环境变量
 local function getEnviroment(name)
-    local format = string.format('echo -e $%s | tr -d "\n"',name)
+    local format = 'echo -e $'..name..' | tr -d "\n"'
     local value = io.popen(format,'r'):read('*a')
     return value
 end
