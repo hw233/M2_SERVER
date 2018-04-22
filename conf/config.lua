@@ -17,7 +17,7 @@ start = "main"
 
 protobuf = root.."proto/protocol.pb"
 
-center_mysql = $(CENTER_MYSQL
-server_id = $(SERVER_ID
-port = $(GAME_PORT
-console_port = $(CONSOLE_PORT
+center_mysql = $CENTER_MYSQL
+server_id = $SERVER_ID
+port = $GAME_PORT
+console_port = $CONSOLE_PORT
