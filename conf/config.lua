@@ -24,7 +24,6 @@ local function getEnviroment(name)
     return value
 end
 
-
 center_mysql = getEnviroment("CENTER_MYSQL")
 server_id = getEnviroment("SERVER_ID")
 port = getEnviroment("GAME_PORT")
