@@ -17,14 +17,7 @@ start = "main"
 
 protobuf = root.."proto/protocol.pb"
 
--- 获取系统的环境变量
-local function getEnviroment(name)
-    local format = 'echo -e $'..name..' | tr -d "\n"'
-    local value = io.popen(format,'r'):read('*a')
-    return value
-end
-
-center_mysql = getEnviroment("CENTER_MYSQL")
-server_id = getEnviroment("SERVER_ID")
-port = getEnviroment("GAME_PORT")
-console_port = port + 1
+center_mysql = "$CENTER_MYSQL"
+server_id = "$SERVER_ID"
+port = "$GAME_PORT"
+console_port = "$CONSOLE_PORT"
