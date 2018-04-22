@@ -72,10 +72,7 @@ function command:init()
     end
 
     local mysql_conf = sharedata.query("mysql_conf")
-    local host,port,database = mysql_conf.host,mysql_conf.port,mysql_conf.database
-    assert(host,"host is nil")
-    assert(port,"port is nil")
-    assert(database,"database is nil")
+    mysql_conf.on_connect = on_connect
 
     for i=1,10 do
         local db = mysql.connect({

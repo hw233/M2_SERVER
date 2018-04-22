@@ -1,3 +1,7 @@
+CREATE USER 'mygame'@'localhost' identified by 'lsj_2018';
+CREATE USER 'mygame'@'%' identified by 'lsj_2018';
+
+
 CREATE DATABASE IF NOT EXISTS lsj_game default char set utf8;
 use lsj_game;
 
@@ -147,7 +151,4 @@ CREATE TABLE replay_ids
 );
 -- 定义replay_id 的自增ID 从100开始
 ALTER TABLE replay_ids AUTO_INCREMENT = 100;
-
-
-
 
