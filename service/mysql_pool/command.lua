@@ -72,17 +72,10 @@ function command:init()
     end
 
     local mysql_conf = sharedata.query("mysql_conf")
-    mysql_conf.on_connect = on_connect
-
+    local new_conf = {on_connect=on_connect}
+    utils:mergeToTable(new_conf,mysql_conf)
     for i=1,10 do
-        local db = mysql.connect({
-            host=host,
-            port=port,
-            user="root",
-            max_packet_size = 1024 * 1024,
-            database = database,
-            on_connect = on_connect
-        })
+        local db = mysql.connect(new_conf)
         table.insert(mysql_list,db)
     end
 end
