@@ -13,11 +13,6 @@ FUNCTION["REFRESH_CONFIG"] = function()
     local server_info = {node_type=node_type,node_name=node_name,node_address=node_address}
     sharedata.update("server_info",server_info)
 
-    local center_redis = skynet.getenv("center_redis")
-    local host, port = string.match(center_redis, "([%d%.]+):([%d]+)")
-    local redis_conf = {host=host,port=port}
-    sharedata.update("redis_conf",redis_conf)
-
     local center_mysql = skynet.getenv("center_mysql")
     local host, port = string.match(center_mysql, "([%d%.]+):([%d]+)")
     local mysql_conf = {host=host,port=port,database = "lsj_game"}
